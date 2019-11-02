@@ -15,6 +15,7 @@ const template = `
       scroll-snap-align: end;
       scroll-margin-right: var(--icon-width);
 
+      position: -webkit-sticky;
       position: sticky;
       left: 0;
       right: calc(var(--icon-width) * 2 - 100%);
