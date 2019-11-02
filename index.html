@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<style>
+  @font-face {
+    font-family: "Material Icons";
+    src: url("https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    background: url(bg.jpg);
+  }
+
+  cascading-hamburger-menu {
+    flex: 1 0 100%;
+  }
+
+  @media screen and (min-width: 400px) {
+    cascading-hamburger-menu {
+      flex: 0 0 360px;
+      height: 640px;
+      border: 1px solid black;
+      border-width: 50px 10px 50px 10px;
+      border-radius: 50px;
+      box-shadow: 5px 5px 10px black
+    }
+  }
+
+  .pane {
+    background: #333;
+    color: white;
+    box-shadow: 0 0 10px black;
+  }
+
+  .pane ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pane ul li {
+    display: flex;
+    align-items: center;
+    padding: .25em 0;
+  }
+
+  .pane ul li.selected {
+    box-shadow: inset 0 0 3px grey;
+    background: #666;
+  }
+
+  .icon {
+    font-family: 'Material Icons';
+    font-size: 24px;
+    padding: 4px;
+  }
+
+  .date {
+    font-size: 24px;
+    padding: 4px;
+    width: 24px;
+    text-align: center;
+    margin-right: 4px;
+  }
+
+  h1,
+  h2 {
+    display: flex;
+    align-items: center;
+  }
+
+  .content {
+    background: white;
+    box-shadow: 0 0 10px black;
+  }
+</style>
+
+<cascading-hamburger-menu pane-width="300" icon-width="35">
+  <div class="pane">
+    <h2><span class="icon">menu</span>Main Menu</h2>
+    <ul>
+      <li><span class="icon">home</span>Home</li>
+      <li><span class="icon">school</span>About</li>
+      <li class="selected"><span class="icon">calendar_today</span>Calendar</li>
+      <li><span class="icon">phone</span>Contact</li>
+    </ul>
+  </div>
+  <div class="pane">
+    <h2><span class="icon">menu</span>Year</h2>
+    <ul>
+      <li><span class="date">10</span>2010</li>
+      <li><span class="date">11</span>2011</li>
+      <li><span class="date">12</span>2012</li>
+      <li><span class="date">13</span>2013</li>
+      <li><span class="date">14</span>2014</li>
+      <li class="selected"><span class="date">15</span>2015</li>
+      <li><span class="date">16</span>2016</li>
+      <li><span class="date">17</span>2017</li>
+      <li><span class="date">18</span>2018</li>
+      <li><span class="date">19</span>2019</li>
+    </ul>
+  </div>
+
+  <div class="pane">
+    <h2><span class="icon">menu</span>Month</h2>
+    <ul>
+      <li><span class="date">J</span>January</li>
+      <li><span class="date">F</span>February</li>
+      <li><span class="date">M</span>March</li>
+      <li><span class="date">A</span>April</li>
+      <li class="selected"><span class="date">M</span>May</li>
+      <li><span class="date">J</span>June</li>
+      <li><span class="date">J</span>July</li>
+      <li><span class="date">A</span>August</li>
+      <li><span class="date">S</span>September</li>
+      <li><span class="date">O</span>October</li>
+      <li><span class="date">N</span>November</li>
+      <li><span class="date">D</span>December</li>
+    </ul>
+  </div>
+
+  <div class="pane">
+    <h2><span class="icon">menu</span>Date</h2>
+    <ul>
+      <li><span class="date">1</span>Wednesday</li>
+      <li><span class="date">2</span>Thursday</li>
+      <li><span class="date">3</span>Friday</li>
+      <li><span class="date">4</span>Saturday</li>
+      <li class="selected"><span class="date">5</span>Sunday</li>
+      <li><span class="date">6</span>Monday</li>
+      <li><span class="date">7</span>Tuesday</li>
+      <li><span class="date">8</span>Wednesday</li>
+      <li><span class="date">9</span>Thursday</li>
+      <li><span class="date">10</span>Friday</li>
+      <li><span class="date">11</span>Saturday</li>
+      <li><span class="date">12</span>Sunday</li>
+      <li><span class="date">13</span>Monday</li>
+      <li><span class="date">14</span>Tuesday</li>
+      <li><span class="date">15</span>Wednesday</li>
+      <li><span class="date">16</span>Thursday</li>
+      <li><span class="date">17</span>Friday</li>
+      <li><span class="date">18</span>Saturday</li>
+      <li><span class="date">19</span>Sunday</li>
+      <li><span class="date">20</span>Monday</li>
+      <li><span class="date">21</span>Tuesday</li>
+      <li><span class="date">22</span>Wednesday</li>
+      <li><span class="date">23</span>Thursday</li>
+      <li><span class="date">24</span>Friday</li>
+      <li><span class="date">25</span>Saturday</li>
+      <li><span class="date">26</span>Sunday</li>
+      <li><span class="date">27</span>Monday</li>
+      <li><span class="date">28</span>Tuesday</li>
+      <li><span class="date">29</span>Wednesday</li>
+      <li><span class="date">30</span>Thursday</li>
+      <li><span class="date">31</span>Friday</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h2>Content</h2>
+  </div>
+</cascading-hamburger-menu>
+
+<script src="main.js" type="module"></script>
