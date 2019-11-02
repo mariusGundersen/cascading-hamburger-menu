@@ -1,178 +1,156 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<style>
-  @font-face {
-    font-family: "Material Icons";
-    src: url("https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 400;
-  }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cascading Hamburger Menu</title>
 
-  html {
-    margin: 0;
-    padding: 0;
-  }
 
-  body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-    background: url(bg.jpg);
-  }
-
-  cascading-hamburger-menu {
-    flex: 1 0 100%;
-  }
-
-  @media screen and (min-width: 400px) {
-    cascading-hamburger-menu {
-      flex: 0 0 360px;
-      height: 640px;
-      border: 1px solid black;
-      border-width: 50px 10px 50px 10px;
-      border-radius: 50px;
-      box-shadow: 5px 5px 10px black
+  <style>
+    @font-face {
+      font-family: "Material Icons";
+      src: url("https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 400;
     }
-  }
 
-  .pane {
-    background: #333;
-    color: white;
-    box-shadow: 0 0 10px black;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  .pane ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+    html {
+      margin: 0;
+      padding: 0;
+    }
 
-  .pane ul li {
-    display: flex;
-    align-items: center;
-    padding: .25em 0;
-  }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-  .pane ul li.selected {
-    box-shadow: inset 0 0 3px grey;
-    background: #666;
-  }
+      background: url(bg.jpg);
+      background-size: cover;
+    }
 
-  .icon {
-    font-family: 'Material Icons';
-    font-size: 24px;
-    padding: 4px;
-  }
+    cascading-hamburger-menu {
+      flex: 1 0 100vw;
+      height: 100vh;
+    }
 
-  .date {
-    font-size: 24px;
-    padding: 4px;
-    width: 24px;
-    text-align: center;
-    margin-right: 4px;
-  }
+    @media screen and (min-width: 500px) {
+      body {
+        align-items: center;
+      }
 
-  h1,
-  h2 {
-    display: flex;
-    align-items: center;
-  }
+      cascading-hamburger-menu {
+        flex: 0 0 360px;
+        height: 640px;
+        border: 1px solid black;
+        border-width: 50px 10px 50px 10px;
+        border-radius: 50px;
+        box-shadow: 5px 5px 10px black
+      }
+    }
 
-  .content {
-    background: white;
-    box-shadow: 0 0 10px black;
-  }
-</style>
+    .pane {
+      background: #333;
+      color: white;
+      box-shadow: 0 0 16px black;
+    }
 
-<cascading-hamburger-menu pane-width="300" icon-width="35">
-  <div class="pane">
-    <h2><span class="icon">menu</span>Main Menu</h2>
-    <ul>
-      <li><span class="icon">home</span>Home</li>
-      <li><span class="icon">school</span>About</li>
-      <li class="selected"><span class="icon">calendar_today</span>Calendar</li>
-      <li><span class="icon">phone</span>Contact</li>
-    </ul>
-  </div>
-  <div class="pane">
-    <h2><span class="icon">menu</span>Year</h2>
-    <ul>
-      <li><span class="date">10</span>2010</li>
-      <li><span class="date">11</span>2011</li>
-      <li><span class="date">12</span>2012</li>
-      <li><span class="date">13</span>2013</li>
-      <li><span class="date">14</span>2014</li>
-      <li class="selected"><span class="date">15</span>2015</li>
-      <li><span class="date">16</span>2016</li>
-      <li><span class="date">17</span>2017</li>
-      <li><span class="date">18</span>2018</li>
-      <li><span class="date">19</span>2019</li>
-    </ul>
-  </div>
+    .pane ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
 
-  <div class="pane">
-    <h2><span class="icon">menu</span>Month</h2>
-    <ul>
-      <li><span class="date">J</span>January</li>
-      <li><span class="date">F</span>February</li>
-      <li><span class="date">M</span>March</li>
-      <li><span class="date">A</span>April</li>
-      <li class="selected"><span class="date">M</span>May</li>
-      <li><span class="date">J</span>June</li>
-      <li><span class="date">J</span>July</li>
-      <li><span class="date">A</span>August</li>
-      <li><span class="date">S</span>September</li>
-      <li><span class="date">O</span>October</li>
-      <li><span class="date">N</span>November</li>
-      <li><span class="date">D</span>December</li>
-    </ul>
-  </div>
+    .pane ul li a {
+      display: flex;
+      align-items: center;
+      padding: .25em 0;
+      color: inherit;
+      text-decoration: none;
+    }
 
-  <div class="pane">
-    <h2><span class="icon">menu</span>Date</h2>
-    <ul>
-      <li><span class="date">1</span>Wednesday</li>
-      <li><span class="date">2</span>Thursday</li>
-      <li><span class="date">3</span>Friday</li>
-      <li><span class="date">4</span>Saturday</li>
-      <li class="selected"><span class="date">5</span>Sunday</li>
-      <li><span class="date">6</span>Monday</li>
-      <li><span class="date">7</span>Tuesday</li>
-      <li><span class="date">8</span>Wednesday</li>
-      <li><span class="date">9</span>Thursday</li>
-      <li><span class="date">10</span>Friday</li>
-      <li><span class="date">11</span>Saturday</li>
-      <li><span class="date">12</span>Sunday</li>
-      <li><span class="date">13</span>Monday</li>
-      <li><span class="date">14</span>Tuesday</li>
-      <li><span class="date">15</span>Wednesday</li>
-      <li><span class="date">16</span>Thursday</li>
-      <li><span class="date">17</span>Friday</li>
-      <li><span class="date">18</span>Saturday</li>
-      <li><span class="date">19</span>Sunday</li>
-      <li><span class="date">20</span>Monday</li>
-      <li><span class="date">21</span>Tuesday</li>
-      <li><span class="date">22</span>Wednesday</li>
-      <li><span class="date">23</span>Thursday</li>
-      <li><span class="date">24</span>Friday</li>
-      <li><span class="date">25</span>Saturday</li>
-      <li><span class="date">26</span>Sunday</li>
-      <li><span class="date">27</span>Monday</li>
-      <li><span class="date">28</span>Tuesday</li>
-      <li><span class="date">29</span>Wednesday</li>
-      <li><span class="date">30</span>Thursday</li>
-      <li><span class="date">31</span>Friday</li>
-    </ul>
-  </div>
+    .pane ul li.selected {
+      background: #fff;
+      box-shadow: inset 0 0 3px #333;
+      color: #333;
+    }
 
-  <div class="content">
-    <h2>Content</h2>
-  </div>
-</cascading-hamburger-menu>
+    .icon {
+      font-family: 'Material Icons';
+      font-size: 24px;
+      padding: 4px;
+    }
 
-<script src="main.js" type="module"></script>
+    .date {
+      font-size: 24px;
+      padding: 4px;
+      width: 24px;
+      text-align: center;
+      margin-right: 4px;
+    }
+
+    h1,
+    h2 {
+      display: flex;
+      align-items: center;
+    }
+
+    .content {
+      background: white;
+      box-shadow: 0 0 10px black;
+    }
+
+    h3 {
+      padding: 0 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <cascading-hamburger-menu>
+    <div class="pane">
+      <h2><span class="icon">menu</span>Main Menu</h2>
+      <ul>
+        <li><a href="#home"><span class="icon">home</span>Home</a></li>
+        <li><a href="#school"><span class="icon">school</span>About</a></li>
+        <li class="selected"><a href="#calendar_today"><span class="icon">calendar_today</span>Calendar</a></li>
+        <li><a href="#phone"><span class="icon">phone</span>Phone</a></li>
+        <li><a href="#alarm"><span class="icon">alarm</span>Alarm</a></li>
+        <li><a href="#all_inbox"><span class="icon">all_inbox</span>Inbox</a></li>
+        <li><a href="#bookmarks"><span class="icon">bookmarks</span>Bookmarks</a></li>
+        <li><a href="#fingerprint"><span class="icon">fingerprint</span>Security</a></li>
+        <li><a href="#payment"><span class="icon">payment</span>Shopping</a></li>
+        <li><a href="#work"><span class="icon">work</span>Work</a></li>
+        <li><a href="#extension"><span class="icon">extension</span>Plugins</a></li>
+        <li><a href="#chat"><span class="icon">chat</span>Chat</a></li>
+        <li><a href="#camera"><span class="icon">camera</span>Images</a></li>
+        <li><a href="#notifications"><span class="icon">notifications</span>Notifications</a></li>
+        <li><a href="#movie_creation"><span class="icon">movie_creation</span>Movies</a></li>
+        <li><a href="#folder"><span class="icon">folder</span>Files</a></li>
+        <li><a href="#pie_chart"><span class="icon">pie_chart</span>Statistics</a></li>
+        <li><a href="#games"><span class="icon">games</span>Games</a></li>
+        <li><a href="#print"><span class="icon">print</span>Printers</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h2><span class="icon">calendar_today</span>Calendar</h2>
+      <h3>Imagine there is a calendar here</h3>
+      <h3>Try scrolling left or right</h3>
+    </div>
+  </cascading-hamburger-menu>
+
+  <script src="main.js" type="module"></script>
+
+</body>
+
+</html>
